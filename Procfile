@@ -1,0 +1,1 @@
+web: gunicorn cutomUserPj.wsgi --log-file -

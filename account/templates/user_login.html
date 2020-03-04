@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+  {% csrf_token %}
+  <body>
+    {% if user.id  %}
+    <p>Login completed successfully．</p>
+    <p>Hello，{{ user.username }}さん</p>
+    <a href="{% url 'account:user_logout' %}">logout</a>
+    
+    {% else %}
+    <a>ユーザー名またはパスワードが不正です</a>
+    <p><a href="{% url 'account:index' %}">back</a></p>
+    {% endif %}
+  </body>
+</html>
